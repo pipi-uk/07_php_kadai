@@ -17,7 +17,7 @@ $content = $_POST['content'];
 //2. DB接続します
 try {
     //ID:'root', Password: xamppは 空白 ''
-    $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost', 'root', '');
+    $pdo = new PDO('mysql:dbname=gs_db_kadai_2;charset=utf8;host=localhost', 'root', '');
     } catch (PDOException $e) {
     exit('DBConnectError:' . $e->getMessage());
     }
@@ -26,7 +26,7 @@ try {
 // 1. SQL文を用意
 $stmt = $pdo->prepare("
     INSERT INTO
-        gs_db_kadai(id, name, url, datetime, content)
+        gs_an_table_kadai_2(id, name, url, datetime, content)
     VALUES (
         NULL, :name, :url, :datetime, :content)");
 
